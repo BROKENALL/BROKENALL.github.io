@@ -24,7 +24,7 @@ body {
 
 .message h1 {
     font-size: 2.5em;
-    color: #ff69b4;
+    color: hsl(330, 82%, 85%);
     margin-bottom: 1em;
 }
 
@@ -134,4 +134,22 @@ body {
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
+}
+
+/* 添加计时器样式 */
+.time-counter {
+    font-size: 1.1em;
+    color: #ff69b4;
+    margin: 1em 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 105, 180, 0.2); }
+    50% { box-shadow: 0 0 15px rgba(255, 105, 180, 0.4); }
+    100% { box-shadow: 0 0 5px rgba(255, 105, 180, 0.2); }
 } 
