@@ -20,7 +20,7 @@ function updateTimer() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     // 初始更新计时器
     updateTimer();
     // 每秒更新一次
@@ -90,6 +90,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     generateSnowflakes();
+
+    // 添加按钮事件监听
+    const secretButton = document.getElementById('secretButton');
+    if (secretButton) {
+        secretButton.addEventListener('click', async function() {
+            let password = prompt('请输入暗号：');
+            if (password === '歪比巴布') {
+                // 创建一个音频元素并尝试播放
+                const audio = new Audio('muc.mp3');
+                try {
+                    await audio.play();
+                    sessionStorage.setItem('shouldPlayMusic', 'true');
+                    window.location.href = 'secret.html';
+                } catch (error) {
+                    // 如果自动播放失败，仍然跳转
+                    sessionStorage.setItem('shouldPlayMusic', 'true');
+                    window.location.href = 'secret.html';
+                }
+            } else {
+                alert('暗号不正确，请重新输入！');
+            }
+        });
+    }
 });
 
 // 修改雪花生成和动画逻辑
