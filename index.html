@@ -631,7 +631,13 @@
         }
         
         // 页面加载完成后初始化
+        // 页面加载完成后初始化
+        document.addEventListener('click', toggleMode);
+        document.addEventListener('touchstart', function (event) {
+            toggleMode();
+        }, { passive: true });
         window.addEventListener('load', init);
     </script>
 </body>
 </html>
+
